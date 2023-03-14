@@ -43,7 +43,7 @@ export const actions: Actions = {
 						email: undefined,
 						password: undefined
 					},
-					externalErrors: 'Este usuario no existe o las credenciales ingresadas son incorrectas.'
+					externalErrors: 'Las credenciales ingresadas son incorrectas.'
 				});
 
 			cookies.set('user-session', existingUser.id, {
