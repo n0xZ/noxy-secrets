@@ -3,12 +3,13 @@
 
 generator client {
   provider = "prisma-client-js"
+  
 }
 
 datasource db {
  provider = "mysql"
   url      = env("DATABASE_URL")
-
+ relationMode = "prisma"
 }
 
 model User {
@@ -27,6 +28,7 @@ model Project{
   createdAt DateTime @default(now())
   user User @relation(fields: [id],references: [id],onDelete: Cascade,onUpdate: Cascade)
   keys ProjectKey[]
+  @@index([id])
 }
 
 model ProjectKey{
@@ -35,4 +37,5 @@ model ProjectKey{
   value String
   createdAt DateTime @default(now())
   relatedProject Project @relation(fields: [id],references: [id],onDelete: Cascade,onUpdate: Cascade)
+    @@index([id])
 }
