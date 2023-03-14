@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>Bienvenido a Noxy - secrets!</title>
+</svelte:head>
 <header class="p-5 ">
 	<nav class="flex flex-row items-center justify-between container mx-auto max-w-3xl">
 		<a href="/">Preactyx</a>
@@ -14,8 +17,8 @@
 		Llegó la hora de guardar los secretos de tu proyecto, de manera efectiva y segura.
 	</h2>
 	<p>
-		Con preactyx, guardarás todas tus variables de entorno relacionadas a tu proyecto, de manera
-		eficaz, rápida y sencilla.
+		Con Noxy - secrets , guardarás todas tus variables de entorno relacionadas a tu proyecto, de
+		manera eficaz, rápida y sencilla.
 	</p>
 	<a href="/login" class="underline">Comenzar ya!</a>
 </main>
