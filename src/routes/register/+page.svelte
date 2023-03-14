@@ -1,15 +1,24 @@
 <script lang="ts">
-	import { enhance } from '$app/forms'
-	import type { ActionData } from './$types'
-	export let form: ActionData
+	import { enhance, type SubmitFunction } from '$app/forms';
+	import type { ActionData } from './$types';
+	export let form: ActionData;
+	let loading = false;
+
+	const registerUser: SubmitFunction = ({}) => {
+		loading = true;
+		return async ({ update }) => {
+			loading = false;
+			await update();
+		};
+	};
 </script>
 
-<svelte:head><title>Noxy - secrets  | Crear nueva cuenta</title></svelte:head>
+<svelte:head><title>Noxy - secrets | Crear nueva cuenta</title></svelte:head>
 
 <section class="h-screen grid place-items-center font-mukta">
 	<form
 		action="/register?/registerUser"
-		use:enhance
+		use:enhance={registerUser}
 		method="post"
 		class=" flex flex-col justify-center space-y-6 max-w-2xl w-full xl:p-0 p-1"
 	>
@@ -23,7 +32,7 @@
 				class="px-4 py-3 rounded-lg outline-none bg-light-300 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
-				>{#if form?.containsErrors && form?.fields?. username}
+				>{#if form?.containsErrors && form?.fields?.username}
 					<p>{form?.fields?.username}</p>
 				{/if}</span
 			>
@@ -37,7 +46,7 @@
 				class="px-4 py-3 rounded-lg outline-none bg-light-300 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
-				>{#if form?.containsErrors && form?.fields?.email} 
+				>{#if form?.containsErrors && form?.fields?.email}
 					<p>{form?.fields?.email}</p>
 				{/if}</span
 			>
@@ -62,12 +71,11 @@
 			class="px-5 py-3 rounded-lg  bg-purple-500 c-gray-50 font-semibold w-full max-w-2xl"
 			>Crear nueva cuenta</button
 		>
-				<span class="h-5 c-red-500"
-				>{#if form?.containsErrors && form?.externalErrors}
-					<p>{form?.externalErrors  }</p>
-			
-				{/if}
-			</span>
+		<span class="h-5 c-red-500"
+			>{#if form?.containsErrors && form?.externalErrors}
+				<p>{form?.externalErrors}</p>
+			{/if}
+		</span>
 		<a href="/login" class="text-center underline">Ya tengo una cuenta</a>
 	</form>
 </section>
