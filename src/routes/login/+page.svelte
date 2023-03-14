@@ -3,7 +3,7 @@
 
 	export let form: any;
 </script>
-
+<svelte:head><title>Noxy - secrets  | Iniciar sesión</title></svelte:head>
 <section class="h-screen grid place-items-center font-mukta">
 	<form
 		action="/login?/login"
