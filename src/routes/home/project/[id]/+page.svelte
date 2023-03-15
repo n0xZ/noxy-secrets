@@ -12,7 +12,7 @@
 
 <main class="h-full container mx-auto max-w-3xl">
 	{#if !data.keys.length}
-		<p>No tienes variables de entorno declaradas en este proyecot.</p>
+		<p>No tienes variables de entorno declaradas en este proyecto.</p>
 	{:else}
 		<KeyList projectKeys={data.keys} />
 	{/if}
