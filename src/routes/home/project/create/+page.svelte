@@ -13,6 +13,10 @@
 	};
 </script>
 
+<svelte:head>
+<title>Noxy - secrets | Crear nuevo proyecto</title>
+
+</svelte:head>
 <main class="h-full ">
 	<form
 	method="post"
