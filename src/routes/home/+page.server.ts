@@ -5,10 +5,10 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ locals }) => {
 	const userId = locals.userId;
 	if (!userId) throw redirect(302, '/');
-	const userReccomendations = await prisma.project.findMany({
+	const userProjects = await prisma.project.findMany({
 		where: { user: { id: userId } }
 	});
-	return { reccos: userReccomendations };
+	return { projects: userProjects };
 };
 export const actions: Actions = {
 	default: async ({ cookies }) => {
