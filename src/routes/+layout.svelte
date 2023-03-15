@@ -3,4 +3,4 @@ import '@unocss/reset/antfu.css'
 import 'virtual:uno.css'
 </script>
 
-<slot/>
+<div class="font-murecho"><slot/></div>
