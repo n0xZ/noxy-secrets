@@ -12,7 +12,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 };
 export const actions: Actions = {
 	default: async ({ cookies }) => {
-		console.log('asd');
 		cookies.delete('user-session');
 		throw redirect(302, '/');
 	}
