@@ -15,6 +15,7 @@
 
 <main class="h-full ">
 	<form
+	method="post"
 	action="/home/project/create?/create-project"
 		use:enhance={createProject}
 		class="flex flex-col justify-center space-y-6 container w-full mx-auto max-w-2xl xl:p-0 p-2 mt-20"
