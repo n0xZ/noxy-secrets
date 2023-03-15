@@ -26,9 +26,10 @@ model Project{
   name String 
   description String
   createdAt DateTime @default(now())
-  user User @relation(fields: [id],references: [id],onDelete: Cascade,onUpdate: Cascade)
+  user User @relation(fields: [userId],references: [id],onDelete: Cascade,onUpdate: Cascade)
+  userId String
   keys ProjectKey[]
-  @@index([id])
+  @@index([userId])
 }
 
 model ProjectKey{
@@ -36,6 +37,7 @@ model ProjectKey{
   name String
   value String
   createdAt DateTime @default(now())
-  relatedProject Project @relation(fields: [id],references: [id],onDelete: Cascade,onUpdate: Cascade)
-    @@index([id])
+  relatedProject Project @relation(fields: [relatedProjectId],references: [id],onDelete: Cascade,onUpdate: Cascade)
+  relatedProjectId String
+    @@index([relatedProjectId])
 }
