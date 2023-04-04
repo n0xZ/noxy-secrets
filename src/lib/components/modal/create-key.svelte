@@ -43,7 +43,7 @@
 				leaveTo="opacity-0 scale-95"
 			>
 				<div
-					class="inline-block flex  xl:w-[40rem]  flex-col justify-between items-center  w-[22rem] p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-purple-300  shadow-xl rounded-2xl h-full"
+					class="inline-block flex  xl:w-[40rem]  flex-col justify-between items-center  w-[22rem] p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white  shadow-xl rounded-2xl h-full"
 				>
 					<DialogTitle as="h3" class="text-lg font-medium leading-6 mb-12">
 						Agregar llave
