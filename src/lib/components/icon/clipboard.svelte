@@ -10,7 +10,7 @@
 	viewBox="0 0 24 24"
 	height="1em"
 	width="1em"
-	class="xl:h-9  xl:w-9 h-7 w-7 cursor-pointer  "
+	class="h-6 w-6 cursor-pointer  "
 >
 	<path
 		stroke-linecap="round"
