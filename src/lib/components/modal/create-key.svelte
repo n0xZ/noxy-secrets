@@ -74,7 +74,7 @@
 							<label class="font-medium" for="value"> Valor de la llave </label>
 							<input
 								class="px-5 py-4 rounded-lg outline-none bg-light-300"
-								type="text"
+								type="password"
 								name="value"
 								placeholder="HOLA!"
 								disabled={loading}
@@ -86,8 +86,16 @@
 							>
 						</aside>
 						<div class="flex flex-row w-full justify-center items-center space-x-5 c-white">
-							<button type="submit" class="p-3  p-3 w-48 rounded-lg bg-purple-500">Agregar</button>
-							<button class="p-3 w-48 rounded-lg bg-red-500 hover:opacity-70 duration-100 ease-in-out" on:click={closeModal}>Cancelar</button>
+							<button
+								type="submit"
+								class="p-3  p-3 w-48 rounded-lg bg-purple-500"
+								disabled={loading}>{loading ? 'Agregando...' : 'Agregar'}</button
+							>
+							<button
+								class="p-3 w-48 rounded-lg bg-red-500 hover:opacity-70 duration-100 ease-in-out"
+								disabled={loading}
+								on:click={closeModal}>Cancelar</button
+							>
 						</div>
 					</form>
 				</div>
