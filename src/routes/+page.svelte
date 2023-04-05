@@ -3,10 +3,10 @@
 </svelte:head>
 <header class="p-5 ">
 	<nav class="flex flex-row items-center justify-between container mx-auto max-w-3xl">
-		<a href="/">Preactyx</a>
+		<a href="/">Noxy - secrets</a>
 		<ul class="flex flex-row items-center space-x-5">
 			<li>
-				<a href="/login">Iniciar sesión</a>
+				<a href="/login">Unete ya!</a>
 			</li>
 			<li />
 		</ul>
