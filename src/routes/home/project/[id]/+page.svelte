@@ -14,6 +14,7 @@
 		loading = true;
 		return async ({ update }) => {
 			loading = false;
+			isOpen = false;
 			await update();
 		};
 	};
