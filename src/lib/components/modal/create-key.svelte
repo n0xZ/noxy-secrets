@@ -45,7 +45,7 @@
 				<div
 					class="inline-block flex  xl:w-[40rem]  flex-col justify-between items-center  w-[22rem] p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white  shadow-xl rounded-2xl h-full"
 				>
-					<DialogTitle as="h3" class="text-lg font-medium leading-6 mb-12">
+					<DialogTitle as="h3" class="text-xl font-medium leading-6 mb-12">
 						Agregar llave
 					</DialogTitle>
 
@@ -56,7 +56,7 @@
 						use:enhance={addKey}
 					>
 						<aside class="flex flex-col justify-center space-y-3 max-w-2xl w-full">
-							<label class="font-bold" for="name"> Nombre de la llave </label>
+							<label class="font-medium" for="name"> Nombre de la llave </label>
 							<input
 								class="px-5 py-4 rounded-lg  outline-none bg-light-300"
 								type="text"
@@ -71,7 +71,7 @@
 							>
 						</aside>
 						<aside class="flex flex-col justify-center space-y-3 max-w-2xl w-full">
-							<label class="font-bold" for="value"> Valor de la llave </label>
+							<label class="font-medium" for="value"> Valor de la llave </label>
 							<input
 								class="px-5 py-4 rounded-lg outline-none bg-light-300"
 								type="text"
