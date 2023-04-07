@@ -1,5 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
+	import HomeMenu from '$lib/components/menu/home.svelte';
 </script>
 
 <header class="p-5 border-b-2 border-gray-50 ">
@@ -8,7 +9,7 @@
 	>
 		<a href="/home">Home</a>
 
-		<ul class="flex flex-row items-center space-x-5">
+		<ul class="xl:flex lg:flex hidden flex-row items-center space-x-5 ">
 			<a href="/home/project/create">Crear nuevo proyecto</a>
 			<li>
 				<form method="post" action="/home/?logout" use:enhance>
@@ -22,6 +23,7 @@
 				</form>
 			</li>
 		</ul>
+				<HomeMenu/>
 	</nav>
 </header>
 <slot />
