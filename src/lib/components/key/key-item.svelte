@@ -3,7 +3,11 @@
 	import { Disclosure, DisclosureButton, DisclosurePanel } from '@rgossiaux/svelte-headlessui';
 	import DownArrowIcon from '../icon/down-arrow.svelte';
 	import ClipboardIcon from '../icon/clipboard.svelte';
+	import DeleteIcon from '../icon/delete.svelte';
+	import { enhance } from '$app/forms';
 	export let projectKey: ProjectKey;
+
+	$: id = projectKey.id;
 </script>
 
 <Disclosure let:open>
@@ -20,6 +24,11 @@
 			•••••••••••••••
 		</div>
 
-		<ClipboardIcon text={projectKey.value} />
+		<div class="flex flex-row items-center justify-center space-x-3">
+			<ClipboardIcon text={projectKey.value} />
+			<form method="post" action={`/home/project?/deleteKey`} use:enhance>
+				<button type="submit" name="keyId" value={id}><DeleteIcon /></button>
+			</form>
+		</div>
 	</DisclosurePanel>
 </Disclosure>
