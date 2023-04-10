@@ -30,11 +30,12 @@
 				name="username"
 				placeholder="janedoe"
 				disabled={loading}
+				data-test-id="usernameField"
 				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.username}
-					<p>{form?.fields?.username}</p>
+					<p data-test-id="usernameErrors">{form?.fields?.username}</p>
 				{/if}</span
 			>
 		</aside>
@@ -45,11 +46,12 @@
 				name="email"
 				placeholder="janedoe@email.net"
 				disabled={loading}
+				data-test-id="emailField"
 				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.email}
-					<p>{form?.fields?.email}</p>
+					<p data-test-id="emailErrors">{form?.fields?.email}</p>
 				{/if}</span
 			>
 		</aside>
@@ -61,11 +63,12 @@
 				name="password"
 				placeholder="•••••••••••••••"
 				disabled={loading}
+				data-test-id="passwordField"
 				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.password}
-					<p>{form?.fields?.password}</p>
+					<p data-test-id="passwordErrors">{form?.fields?.password}</p>
 				{/if}</span
 			>
 		</aside>
@@ -73,9 +76,9 @@
 			type="submit"
 			disabled={loading}
 			class="px-5 py-3 rounded-lg  bg-purple-600 c-gray-50 font-semibold w-full max-w-2xl"
-			>{!loading ? 'Crear nueva cuenta' : 'Creando...'}</button
+			data-test-id="submitButton">{!loading ? 'Crear nueva cuenta' : 'Creando...'}</button
 		>
-		<span class="h-5 c-red-500"
+		<span class="h-5 c-red-500" data-test-id="externalErrors"
 			>{#if form?.containsErrors && form?.externalErrors}
 				<p>{form?.externalErrors}</p>
 			{/if}
