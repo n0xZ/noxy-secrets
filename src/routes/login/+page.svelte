@@ -31,10 +31,11 @@
 				placeholder="janedoe@email.net"
 				disabled={loading}
 				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
+				data-test-id="emailField"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.email}
-					<p>{form?.fields?.email}</p>
+					<p data-test-id="emailErrors">{form?.fields?.email}</p>
 				{/if}</span
 			>
 		</aside>
@@ -47,10 +48,11 @@
 				placeholder="•••••••••••••••"
 				disabled={loading}
 				class="px-4 py-3 rounded-lg outline-none  bg-light-400 c-gray-800 max-w-2xl"
+				data-test-id="passwordField"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.password}
-					<p>{form?.fields?.password}</p>
+					<p data-test-id="passwordErrors">{form?.fields?.password}</p>
 				{/if}
 			</span>
 		</aside>
@@ -58,9 +60,9 @@
 			type="submit"
 			disabled={loading}
 			class="px-5 py-3 rounded-lg  bg-purple-600 c-gray-50 font-semibold w-full max-w-2xl"
-			>{loading ? 'Cargando...' : 'Iniciar sesión'}</button
+			data-test-id="submitButton">{loading ? 'Cargando...' : 'Iniciar sesión'}</button
 		>
-		<span class="h-5 c-red-500"
+		<span class="h-5 c-red-500" data-test-id="externalErrors"
 			>{#if form?.containsErrors && form?.externalErrors}
 				<p>{form?.externalErrors}</p>
 			{/if}
