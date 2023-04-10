@@ -11,7 +11,7 @@ export const actions: Actions = {
 	deleteKey: async ({ request }) => {
 		const formData = await request.formData();
 		const id = formData.get('keyId') as string;
-		console.log(id);
+
 		const deletedProject = await prisma.projectKey.delete({ where: { id } });
 		return {
 			deletedProject
