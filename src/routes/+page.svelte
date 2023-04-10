@@ -2,7 +2,9 @@
 	<title>Bienvenido a Noxy - secrets!</title>
 </svelte:head>
 <header class="p-5 ">
-	<nav class="flex flex-row items-center justify-between container mx-auto max-w-3xl">
+	<nav
+		class="flex flex-row items-center justify-between container mx-auto  font-jost max-w-3xl xl:text-xl text-lg"
+	>
 		<a href="/">Noxy - secrets</a>
 		<ul class="flex flex-row items-center space-x-5">
 			<li>
