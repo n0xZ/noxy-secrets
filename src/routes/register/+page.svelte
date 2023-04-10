@@ -22,7 +22,7 @@
 		method="post"
 		class=" flex flex-col justify-center space-y-6 max-w-2xl w-full xl:p-0 p-1"
 	>
-		<h1 class="text-center text-2xl font-semibold">Crear cuenta</h1>
+		<h1 class="xl:text-3xl text-2xl text-center font-semibold">Crea tu cuenta en Secrets!</h1>
 		<aside class="flex flex-col justify-center space-y-3 max-w-2xl">
 			<label for="username" class="font-semibold">Nombre de usuario</label>
 			<input
@@ -30,7 +30,7 @@
 				name="username"
 				placeholder="janedoe"
 				disabled={loading}
-				class="px-4 py-3 rounded-lg outline-none bg-light-300 c-gray-800 max-w-2xl"
+				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.username}
@@ -45,7 +45,7 @@
 				name="email"
 				placeholder="janedoe@email.net"
 				disabled={loading}
-				class="px-4 py-3 rounded-lg outline-none bg-light-300 c-gray-800 max-w-2xl"
+				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.email}
@@ -59,9 +59,9 @@
 			<input
 				type="password"
 				name="password"
-				placeholder="janepassword"
+				placeholder="•••••••••••••••"
 				disabled={loading}
-				class="px-4 py-3 rounded-lg outline-none bg-light-300 c-gray-800 max-w-2xl"
+				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 			/>
 			<span class="h-5 c-red-500"
 				>{#if form?.containsErrors && form?.fields?.password}
@@ -72,7 +72,7 @@
 		<button
 			type="submit"
 			disabled={loading}
-			class="px-5 py-3 rounded-lg  bg-purple-500 c-gray-50 font-semibold w-full max-w-2xl"
+			class="px-5 py-3 rounded-lg  bg-purple-600 c-gray-50 font-semibold w-full max-w-2xl"
 			>{!loading ? 'Crear nueva cuenta' : 'Creando...'}</button
 		>
 		<span class="h-5 c-red-500"
