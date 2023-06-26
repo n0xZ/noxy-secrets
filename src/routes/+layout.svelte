@@ -2,4 +2,4 @@
  import "../app.postcss";
 </script>
 
-<div class="font-murecho"><slot/></div>
+<div class="font-inter antialised"><slot/></div>
