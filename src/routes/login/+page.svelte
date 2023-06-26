@@ -24,7 +24,7 @@
 		action="/login?/login"
 		use:enhance={loginUser}
 		method="post"
-		class=" flex flex-col justify-center space-y-6 max-w-2xl w-full xl:p-0 p-1"
+		class=" flex flex-col justify-center space-y-3 max-w-2xl w-full xl:p-0 p-1"
 	>
 		<h2
 			class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center"
@@ -41,7 +41,7 @@
 				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
 				data-test-id="emailField"
 			/>
-			<span class="h-5 text-red-500"
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.email}
 					<p data-test-id="emailErrors">{form?.fields?.email}</p>
 				{/if}</span
@@ -51,14 +51,14 @@
 			<Label for="password">Contraseña</Label>
 
 			<Input type="password" name="password" placeholder="•••••••••••••••" disabled={loading} />
-			<span class="h-5 text-red-500"
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.password}
 					<p data-test-id="passwordErrors">{form?.fields?.password}</p>
 				{/if}
 			</span>
 		</aside>
 		<Button type="submit" disabled={loading}>{loading ? 'Cargando...' : 'Iniciar sesión'}</Button>
-		<span class="h-5 c-red-500" data-test-id="externalErrors"
+		<span class="h-5 text-red-500 text-sm" data-test-id="externalErrors"
 			>{#if form?.containsErrors && form?.externalErrors}
 				<p>{form?.externalErrors}</p>
 			{/if}
