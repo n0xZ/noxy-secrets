@@ -11,6 +11,7 @@ module.exports = {
 				'2xl': '1400px'
 			}
 		},
+		fontFamily: { inter: 'Inter' },
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
