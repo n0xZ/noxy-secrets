@@ -34,7 +34,7 @@
 				placeholder="Mi primer proyecto en Preactyx!"
 				disabled={loading}
 			/>
-			<span class="h-5 c-red-500"
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.name}
 					<p>{form?.fields?.name}</p>
 				{/if}</span
@@ -49,7 +49,7 @@
 				placeholder="Proyecto sobre mantenimiento de robots."
 				disabled={loading}
 			/>
-			<span class="h-5 c-red-500"
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.description}
 					<p>{form?.fields?.description}</p>
 				{/if}</span

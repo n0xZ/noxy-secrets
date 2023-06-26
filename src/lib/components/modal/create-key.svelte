@@ -64,7 +64,7 @@
 								placeholder="MI_VARIABLE_DE_ENTORNO"
 								disabled={loading}
 							/>
-							<span class="h-5 c-red-500"
+							<span class="h-5 text-red-500 text-sm"
 								>{#if form?.containsErrors && form?.fields?.name}
 									<p>{form?.fields?.name}</p>
 								{/if}</span
@@ -79,7 +79,7 @@
 								placeholder="HOLA!"
 								disabled={loading}
 							/>
-							<span class="h-5 c-red-500"
+							<span class="h-5 text-red-500 text-sm"
 								>{#if form?.containsErrors && form?.fields?.value}
 									<p>{form?.fields?.value}</p>
 								{/if}</span
