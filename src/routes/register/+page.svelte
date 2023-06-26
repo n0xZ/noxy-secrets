@@ -1,10 +1,14 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
+	import { enhance } from '$app/forms';
+	import type { SubmitFunction } from '@sveltejs/kit';
 	import type { ActionData } from './$types';
+	import Label from '$components/ui/label.svelte';
+	import Input from '$components/ui/input.svelte';
+	import Button from '$components/ui/button.svelte';
 	export let form: ActionData;
 	let loading = false;
 
-	const registerUser: SubmitFunction = ({}) => {
+	const registerUser: SubmitFunction = () => {
 		loading = true;
 		return async ({ update }) => {
 			loading = false;
@@ -20,65 +24,45 @@
 		action="/register?/registerUser"
 		use:enhance={registerUser}
 		method="post"
-		class=" flex flex-col justify-center space-y-6 max-w-2xl w-full xl:p-0 p-1"
+		class=" flex flex-col justify-center space-y-3 max-w-2xl w-full xl:p-0 p-1"
 	>
-		<h1 class="xl:text-3xl text-2xl text-center font-semibold">Crea tu cuenta en Secrets!</h1>
+		<h2
+			class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-center"
+		>
+			Crea tu cuenta en Secrets!
+		</h2>
 		<aside class="flex flex-col justify-center space-y-3 max-w-2xl">
-			<label for="username" class="font-semibold">Nombre de usuario</label>
-			<input
-				type="text"
-				name="username"
-				placeholder="janedoe"
-				disabled={loading}
-				data-test-id="usernameField"
-				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
-			/>
-			<span class="h-5 c-red-500"
+			<Label for="username">Nombre de usuario</Label>
+			<Input type="text" name="username" placeholder="janedoe" disabled={loading} />
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.username}
 					<p data-test-id="usernameErrors">{form?.fields?.username}</p>
 				{/if}</span
 			>
 		</aside>
 		<aside class="flex flex-col justify-center space-y-3 max-w-2xl">
-			<label for="email" class="font-semibold">Correo electrónico</label>
-			<input
-				type="email"
-				name="email"
-				placeholder="janedoe@email.net"
-				disabled={loading}
-				data-test-id="emailField"
-				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
-			/>
-			<span class="h-5 c-red-500"
+			<Label for="email">Correo electrónico</Label>
+			<Input type="email" name="email" placeholder="janedoe@email.net" disabled={loading} />
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.email}
 					<p data-test-id="emailErrors">{form?.fields?.email}</p>
 				{/if}</span
 			>
 		</aside>
 		<aside class="flex flex-col justify-center space-y-3 max-w-2xl">
-			<label for="password" class="font-semibold">Contraseña</label>
+			<Label for="password">Contraseña</Label>
 
-			<input
-				type="password"
-				name="password"
-				placeholder="•••••••••••••••"
-				disabled={loading}
-				data-test-id="passwordField"
-				class="px-4 py-3 rounded-lg outline-none bg-light-400 c-gray-800 max-w-2xl"
-			/>
-			<span class="h-5 c-red-500"
+			<Input type="password" name="password" placeholder="•••••••••••••••" disabled={loading} />
+			<span class="h-5 text-red-500 text-sm"
 				>{#if form?.containsErrors && form?.fields?.password}
 					<p data-test-id="passwordErrors">{form?.fields?.password}</p>
 				{/if}</span
 			>
 		</aside>
-		<button
-			type="submit"
-			disabled={loading}
-			class="px-5 py-3 rounded-lg  bg-purple-600 c-gray-50 font-semibold w-full max-w-2xl"
-			data-test-id="submitButton">{!loading ? 'Crear nueva cuenta' : 'Creando...'}</button
+		<Button type="submit" disabled={loading}
+			>{!loading ? 'Crear nueva cuenta' : 'Creando...'}</Button
 		>
-		<span class="h-5 c-red-500" data-test-id="externalErrors"
+		<span class="h-3 text-red-500 text-sm" data-test-id="externalErrors"
 			>{#if form?.containsErrors && form?.externalErrors}
 				<p>{form?.externalErrors}</p>
 			{/if}
