@@ -1,6 +1,13 @@
-import type { Handle } from '@sveltejs/kit';
+import { SvelteKitAuth } from '@auth/sveltekit';
+import GitHub from '@auth/core/providers/github';
+import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from '$env/static/private';
 
-export const handle = (async ({ event, resolve }) => {
-	event.locals.userId = event.cookies.get('user-session');
-	return resolve(event);
-}) satisfies Handle;
+export const handle = SvelteKitAuth({
+	providers: [
+		// @ts-ignore
+		GitHub({
+			clientId: GITHUB_CLIENT_ID,
+			clientSecret: GITHUB_CLIENT_SECRET
+		})
+	]
+});
