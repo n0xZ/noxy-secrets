@@ -9,7 +9,7 @@ const createProjectSchema = z.object({
 });
 export const actions: Actions = {
 	'create-project': async ({ request, locals }) => {
-		const userId = locals.userId;
+		const session = await locals.getSession();
 		const requestedFormData = Object.fromEntries(await request.formData()) as z.infer<
 			typeof createProjectSchema
 		>;
@@ -19,7 +19,8 @@ export const actions: Actions = {
 				data: {
 					name: validateFormData.data.name,
 					description: validateFormData.data.description,
-					user: { connect: { id: userId } }
+					// Warning: Do NOT do this at home. Please check user session before performing an mutation that contains data from the user session.
+					user: { connect: { email: session?.user?.email ?? '' } }
 				}
 			});
 			if (!newProject)
