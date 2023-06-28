@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head><title>Noxy - secrets | Iniciar sesión</title></svelte:head>
-<main class="h-screen grid place-items-center font-mukta">
+<main class="h-screen grid place-items-center ">
 	<section
 		class="flex flex-col justify-center space-y-3 max-w-xl container mx-auto border-2 p-3 border-primary/10 rounded-md h-1/2"
 	>
