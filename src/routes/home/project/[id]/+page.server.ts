@@ -7,7 +7,8 @@ const createKeySchema = z.object({
 	name: z.string().min(3, { message: 'Campo requerido' }),
 	value: z.string().min(3, { message: 'Campo requerido' })
 });
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params, locals }) => {
+	const session = await locals.getSession();
 	const id = params.id;
 	const existingProject = await prisma.project.findUnique({ where: { id } });
 
@@ -18,7 +19,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	if (!projectKeysByProjectId)
 		throw error(500, { message: 'Hubo un error al cargar la keys de tu proyecto' });
-	return { keys: projectKeysByProjectId, projectTitle: existingProject.name };
+	return { keys: projectKeysByProjectId, projectTitle: existingProject.name, session };
 };
 
 export const actions: Actions = {
